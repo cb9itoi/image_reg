@@ -1,12 +1,13 @@
 from PIL import Image, ImageDraw
 
 IMAGE_FOLDER = "images/"
-IMAGE_1 = IMAGE_FOLDER + "test3.png"
-IMAGE_2 = IMAGE_FOLDER + "test1.png"
+IMAGE_1 = IMAGE_FOLDER + "mfi700003.png"
+IMAGE_2 = IMAGE_FOLDER + "mfi700001.png"
 
-FACTOR = 1000
+FACTOR = 10
 COLS = 100
 ROWS = 100
+
 
 def region_analyze(image, x, y, width, height, factor=FACTOR):
     region_status = 0
@@ -45,5 +46,6 @@ def analyze(image_ref, image_target, col=COLS, row=ROWS):
     else:
         print("Images are identical on: FACTOR {f}, COLS {c}, ROWS {r}".format(f=FACTOR, c=COLS, r=ROWS))
     reference.save("diff.png")
+
 
 analyze(IMAGE_1, IMAGE_2)
